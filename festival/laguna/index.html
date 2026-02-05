@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sir Laguna's Page</title>
+    <style>
+      @font-face {
+        font-family: "FF8Font";
+        src: url("FF8.ttf") format("truetype");
+      }
+
+      :root {
+        --bg-teal: rgb(129, 169, 169);
+        --border-tan: rgb(210, 203, 166);
+        --text-dark: rgb(56, 66, 91);
+        --header-red: rgb(166, 114, 107);
+        --ui-white: rgb(129, 169, 169);
+        --main-bg: rgb(173, 197, 190);
+        --logo-pink: rgb(166, 114, 107);
+        --shadow-color: rgba(0, 0, 0, 0.3);
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background:
+          radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(#519b8e, rgba(81, 155, 142, 0.4)),
+          url("bg.jpg") no-repeat center center fixed;
+        background-size:
+          10px 10px,
+          auto,
+          cover;
+        background-color: var(--bg-teal);
+        font-family: "Arial Black", "Arial", sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow-x: hidden;
+      }
+
+      body::-webkit-scrollbar {
+        display: none !important;
+      }
+
+      .header-container {
+        position: relative;
+        height: 180px;
+        width: 100%;
+      }
+
+      .header-bar {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 65%;
+        min-width: 300px;
+        height: 95px;
+        background: linear-gradient(
+          to bottom,
+          var(--ui-white) 0%,
+          #a2d1c8 100%
+        );
+        border-top: 6px solid var(--border-tan);
+        border-bottom: 6px solid var(--border-tan);
+        border-right: 6px solid var(--border-tan);
+        box-shadow:
+          0px 0px 0px 6px var(--header-red),
+          12px 12px 0px 0px var(--shadow-color);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 170px;
+        box-sizing: border-box;
+        z-index: 10;
+      }
+
+      .logo-l {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        width: 140px;
+        height: 140px;
+        background-color: var(--logo-pink);
+        border-radius: 50%;
+        border: 8px solid var(--header-red);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+        font-weight: 900;
+        font-style: italic;
+        color: rgb(56, 66, 91);
+        z-index: 20;
+        box-shadow:
+          inset 0 0 0 3px var(--border-tan),
+          inset 0 0 0 13px var(--bg-teal),
+          12px 12px 0px 0px var(--shadow-color);
+        -webkit-text-stroke: 6px white;
+        paint-order: stroke fill;
+        line-height: 1;
+        transform: translate(-8px, -4px);
+      }
+
+      .header-text {
+        font-size: clamp(24px, 5vw, 56px);
+        font-weight: 900;
+        font-style: italic;
+        color: var(--text-dark);
+        letter-spacing: -3px;
+        transform: scaleY(0.9);
+        white-space: nowrap;
+        -webkit-text-stroke: 10px white;
+        paint-order: stroke fill;
+        margin-left: 20px;
+      }
+
+      .content-area {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 50px 50px 50px;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .scene-box {
+        flex-shrink: 0;
+        width: 380px;
+        max-width: 100%;
+        height: 280px;
+        background: #000;
+        z-index: 5;
+        box-shadow: 12px 12px 0px 0px var(--shadow-color);
+      }
+
+      .scene-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        image-rendering: pixelated;
+      }
+
+      .main-wrapper {
+        flex-grow: 1;
+        flex-basis: 350px;
+        max-width: 450px;
+        min-height: 520px;
+        background-color: var(--main-bg);
+        border: 6px solid var(--border-tan);
+        box-shadow:
+          0px 0px 0px 6px var(--header-red),
+          12px 12px 0px 0px var(--shadow-color);
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        padding: 25px;
+        padding-top: 40px;
+        box-sizing: border-box;
+      }
+
+      .main-body {
+        font-family: "FF8Font", serif;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        color: #222;
+        text-align: left;
+      }
+
+      .article-ls {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .article-ls a {
+        color: #222;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding-left: 1.5em;
+      }
+
+      .article-ls a:hover::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1em;
+        height: 0.6em;
+        background: url("cursor.png") no-repeat center center;
+        background-size: contain;
+      }
+
+      .main-wrapper::after {
+        content: "";
+        position: absolute;
+        right: -17px;
+        top: 40px;
+        bottom: 40px;
+        width: 5px;
+        background: var(--header-red);
+        border-radius: 0 4px 4px 0;
+      }
+
+      .window {
+        display: none !important;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        width: 85%;
+        max-width: 700px;
+        min-height: 100px;
+        max-height: 80vh;
+        padding: 20px 30px;
+        color: #ededed;
+        font-family: "FF8Font", sans-serif;
+        font-size: 1.6rem;
+        text-shadow: #414131 2px 2px;
+        line-height: 1.4;
+        background: rgba(80, 80, 80, 0.9); 
+        border-style: groove ridge ridge groove;
+        border-width: 4px;
+        border-radius: 2px;
+        border-color: #747474 #313131 #313131 #747474;
+        box-shadow: 12px 12px 0px 0px var(--shadow-color);
+        box-sizing: border-box;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        cursor: pointer;
+        font-family: "FF8Font", serif;
+        font-size: 1.1rem;
+        color: #ffffff;
+        text-shadow: #414131 1px 1px;
+        z-index: 101;
+      }
+
+      #dialogueText {
+        white-space: pre-wrap;
+        text-align: left;
+        width: 100%;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      #dialogueText::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (min-width: 900px) {
+        .main-wrapper {
+          margin-top: -80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="window" id="dialogueBox">
+      <span class="close-btn" onclick="closeDialogue()">X</span>
+      <div id="dialogueText"></div>
+    </div>
+
+    <div class="header-container">
+      <div class="logo-l">L</div>
+      <div class="header-bar">
+        <div class="header-text">Sir Laguna's Page</div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="scene-box">
+        <img src="selphie-piano.png" alt="Scene Image" id="mainScene" />
+      </div>
+
+      <div class="main-wrapper">
+        <div class="main-body">
+          <div class="article-ls">
+            <a href="javascript:void(0)" onclick="openDialogue('Sir Laguna writes about the time he went to the editor of Timber Maniacs.\n\nHe brought an article entitled \'Alcohol Will Change You\', but it got rejected.\n\nI think Sir Laguna\'s a lightweight!', '1.png')">Timber Maniacs 1</a>
+            <a href="javascript:void(0)" onclick="openDialogue('Do you understand this picture? Sir Laguna even wrote \'Esthar\'s Secret\'.\n\nBut actually...... I know what it is! This is where Sir Laguna went scouting.\n\nWas it ok for this to be published? I guess he really needed the money!', '2.png')">Timber Maniacs 2</a>
+            <a href="javascript:void(0)" onclick="openDialogue('This is a hotel in Timber. It\'s full of Galbadian soldiers. You\'ll still find soldiers there, but this is a little too much, huh?\n\nYes, this is a picture of when Timber was occupied by Galbadia. Sir Laguna tried to stay at this hotel, but it was used to house soldiers.\n\nWhy are these articles from that period? That\'s because that was the period when Laguna actually wrote the articles. So, all the magazines with Laguna\'s articles are all old and worn out. I wonder how old Sir Laguna is now? I betcha he\'s a dandy old guy!', '3.png')">Timber Maniacs 3</a>
+            <a href="javascript:void(0)" onclick="openDialogue('According to Sir Laguna, he ended up here when he got lost on the Esthar continent. I hope Sir Laguna was all right......\n\nBut what breathtaking scenery! I wanna go, too! I wanna go, I wanna go, I wanna go!', '4.png')">Timber Maniacs 4</a>
+            <a href="javascript:void(0)" onclick="openDialogue('You all know this place! Yes, it\'s the hotel in Balamb! So Sir Laguna went to Balamb, too. Looks like Sir Laguna likes hotels.\n\nThe article says he really wanted to stay at the hotel but ran out of money. He wasn\'t able to try the famous Balamb fish.', '5.png')">Timber Maniacs 5</a>
+            <a href="javascript:void(0)" onclick="openDialogue('This is amazing! Sir Laguna\'s with the Shumi Tribe! The article says he got lost and injured, but thankfully ended up here. Seems like Laguna gets lost a lot.\n\nBut he always repays an act of kindness. By the way, the master here is a Shumi. I heard all about it from Squall.\n\nShumi Tribe.. I wanna meet them!', '6.png')">Timber Maniacs 6</a>
+            <a href="javascript:void(0)" onclick="openDialogue('This is something extra. It\'s the entrance to the Centra ruins. You see me in the picture?\n\nThere\'s a statue of a sorceress and knight. It\'s kinda nice. Although there are tons of monsters!', 'extra.png')">(extra)</a>
+            <a href="javascript:void(0)" onclick="openDialogue('In one of Sir Laguna\'s articles, he wrote about how he tried to get to Esthar. He tried many different routes, but he eventually ended up in Dollet.\n\nThere\'s no way he can make it from Dollet. You sure travel a lot, Sir Laguna!', '7.png')">Timber Maniacs 7</a>
+            <a href="javascript:void(0)" onclick="openDialogue('According to the article, Sir Laguna gambled to try to cover travel expenses. But he lost it all and told how dangerous gambling can be.\n\nI guess he got in a little over his head.', '8.png')">Timber Maniacs 8</a>
+            <a href="javascript:void(0)" onclick="openDialogue('Wow! Sir Laguna\'s in a movie! Plus, it looks like it was shot near Trabia! He could\'ve been famous!\n\nOh.......but I betcha he can\'t act........ He speaks way too highly of himself in the article.\n\nI just find it strange that I don\'t see Ward in the picture.', '9.png')">Timber Maniacs 9</a>
+            <a href="javascript:void(0)" onclick="openDialogue('Well looky here...... He writes proudly of it in the article. A pub, somewhere, plus the owner. No name or location is written down.\n\nBut actually, I know where it is. I won\'t say though, out of respect for Sir Laguna.', '10.png')">Timber Maniacs 10</a>
+            <a href="javascript:void(0)" onclick="openDialogue('This is a picture from Winhill. I guess it\'s during the time he was living there. He looks like he\'s having such a good time.\n\nI bet he wasn\'t even thinking about being a journalist then. He looks so natural.', '11.png')">Timber Maniacs 11</a>
+            <a href="javascript:void(0)" onclick="openDialogue('This is the Great Salt Lake! It\'s a very difficult place to get through, but Sir Laguna did it.\n\nHe says the scenery was beautiful, but the monsters were a real pain. That sounds like Sir Laguna!', '12.png')">Timber Maniacs 12</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const dialogueBox = document.getElementById("dialogueBox");
+      const dialogueText = document.getElementById("dialogueText");
+      const mainScene = document.getElementById("mainScene");
+
+      function openDialogue(text, imageName) {
+        dialogueText.innerText = text;
+        if (imageName) {
+          mainScene.src = imageName;
+        }
+        dialogueBox.style.setProperty("display", "block", "important");
+      }
+
+      function closeDialogue() {
+        dialogueBox.style.setProperty("display", "none", "important");
+      }
+    </script>
+  </body>
+</html>

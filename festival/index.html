@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garden Festival Committee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Ubuntu:italic,wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="menuSound" src="menu.wav" preload="auto"></audio>
+    <div class="overlay" id="modalOverlay">
+      <div class="window">
+        <span class="close-x" onclick="closeModal()">×</span>
+        <iframe id="frame" src="" scrolling="yes"></iframe>
+      </div>
+    </div>
+    <div class="header-wrapper">
+      <img
+        src="title.png"
+        alt="Make the Garden Festival a Success!"
+        class="title-img"
+      />
+    </div>
+    <div class="menu-container">
+      <a
+        href="committee.html"
+        class="nav-btn btn-1"
+        onclick="openPop(event, 'committee.html')"
+        ><span class="heart"></span> Garden Festival Committee</a
+      >
+      <a
+        href="friends.html"
+        class="nav-btn btn-2"
+        onclick="openPop(event, 'friends.html')"
+      >
+        <span class="heart"></span> My Friends
+        <img src="new.png" alt="New!" class="new-btn" />
+      </a>
+      <a
+        href="diary.html"
+        class="nav-btn btn-3"
+        onclick="openPop(event, 'diary.html')"
+        ><span class="heart"></span> My Diary</a
+      >
+      <a href="laguna/" class="nav-btn btn-4"
+        ><span class="heart"></span> Sir Laguna's Page</a
+      >.
+    </div>
+    <div class="footer">
+      <a href="https://amidala.neocities.org/balamb"
+        ><img src="backbutton.png" alt="Back to Home" class="balamb-btn"
+      /></a>
+    </div>
+    <script>
+      const sound = document.getElementById("menuSound");
+      const overlay = document.getElementById("modalOverlay");
+      const frame = document.getElementById("frame");
+
+      function openPop(e, url) {
+        e.preventDefault();
+        frame.src = url;
+        overlay.style.display = "flex";
+      }
+
+      function closeModal() {
+        overlay.style.display = "none";
+        frame.src = "";
+      }
+
+      const buttons = document.querySelectorAll(".nav-btn, .balamb-btn");
+      buttons.forEach((button) => {
+        button.addEventListener("mouseenter", () => {
+          sound.currentTime = 0;
+          sound.play().catch((e) => {});
+        });
+      });
+    </script>
+  </body>
+</html>
