@@ -1,2 +1,10 @@
-# Balamb
-Balamb Garden study panel terminal
+# 🌐 Balamb Garden Intranet Terminal
+
+---
+
+## > Overview
+This project has been on my to-do list since I was 14 years old. It consists of a web-based recreation of the study panel intranet in Balamb Garden from Final Fantasy VIII. It's not perfect, but I'm tired.
+
+### 🖥️ Resources
+
+FF8 font: [rustyworks](https://github.com/rustyworks/my-programming-font)
