@@ -1,7 +1,7 @@
 @font-face {
   font-family: "FF8Font";
   src: url("FF8.ttf") format("truetype");
-}
+} /* https://github.com/rustyworks/my-programming-font/tree/master */
 
 body {
   margin: 0;
