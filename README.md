@@ -9,8 +9,8 @@ This project has been on my to-do list since I was 14 years old. It consists of 
 
 FF8 font: [rustyworks](https://github.com/rustyworks/my-programming-font)
 
-[![Balamb Garden Terminal]([)](https://raw.githubusercontent.com/lindstho/Balamb/refs/heads/main/Screenshot1.png)](https://aerith.me/balamb)
+[![Balamb Garden Terminal]([)](./screenshot1.png)](https://aerith.me/balamb)
 
-[![School Festival Committeel]([)](https://raw.githubusercontent.com/lindstho/Balamb/refs/heads/main/Screenshot2.png)](https://aerith.me/balamb/festival)
+[![School Festival Committeel]([)](./Screenshot2.png)](https://aerith.me/balamb/festival)
 
-[![Sir Laguna's Pagel]([)](https://raw.githubusercontent.com/lindstho/Balamb/refs/heads/main/Screenshot3.png)](https://aerith.me/balamb/festival/laguna)
+[![Sir Laguna's Pagel]([)](./Screenshot3.png)](https://aerith.me/balamb/festival/laguna)
